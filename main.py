@@ -1,9 +1,6 @@
 #!/usr/bin/python3
 
-# use this for Apache/CGI implementation
-
-# import CGI handler
-from wsgiref.handlers import CGIHandler
+# use this to create local server at localhost:5000
 
 # try to import actual flask code
 app = None
@@ -16,7 +13,7 @@ except Exception as e:
 
 # try to run flask app
 try:
-    CGIHandler().run(app)
+    app.run()
 except Exception as e:
-    print('Problem in main with CGIHandler().run(app):', e)
+    print('Problem in main with app.run():', e)
     exit(-1)
